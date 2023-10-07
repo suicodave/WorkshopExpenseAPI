@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import "./loadEnvironment.mjs";
-import expenseRouter from "./routes/expense.mjs";
+import "./loadEnvironment.js";
+import expenseRouter from "./routes/expense.js";
 
 const PORT = process.env.PORT || 5050;
 

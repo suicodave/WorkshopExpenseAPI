@@ -1,10 +1,10 @@
 import express from "express";
-import databaseRef from "../connection.mjs";
+import databaseRef from "../connection.js";
 
 const expenseRouter = express.Router();
 
 expenseRouter.get("/", async (request, response) => {
-  const collection = await databaseRef.collection("expenses");
+  const collection = databaseRef.collection("expenses");
 
   const results = await collection.find({}).toArray();
 
@@ -20,7 +20,7 @@ expenseRouter.post("/", async (request, response) => {
     date: body.date,
   };
 
-  const collection = await databaseRef.collection('expenses');
+  const collection = databaseRef.collection('expenses');
 
   await collection.insertOne(newExpense);
 
